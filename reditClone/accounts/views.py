@@ -16,3 +16,17 @@ def signup(request):
             return render(request, 'accounts/signup.html', {'error': "Your passwords don't match"})
     else:
         return render(request, 'accounts/signup.html')
+
+
+def loginView(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return render(request, 'accounts/login.html')
+        else:
+            return render(request, 'accounts/login.html', {'error': 'Wrong username or password'})
+    else:
+        return render(request, 'accounts/login.html')

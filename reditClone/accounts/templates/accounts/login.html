@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Sing up </title>
+    <title>Log In </title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body>
-  <h1> Sign up!</h1>
+  <h1> Log In!</h1>
 
   {% if error %}
     {{ error }}
@@ -15,7 +15,7 @@
   <br />
   {% endif %}
 
-    <form action="{% url 'accounts:signup' %}" method="POST">
+    <form action="{% url 'accounts:login' %}" method="POST">
         {% csrf_token %}
         Username:
         <br />
@@ -23,13 +23,9 @@
         <br />
         Password:
         <br/>
-        <input type="password" name="password1"/>
+        <input type="password" name="password"/>
         <br />
-        Confirm Password:
-        <br />
-        <input type="password" name="password2"/>
-        <br />
-        <input type="submit" value="Sign up!"/>
+        <input type="submit" value="Login"/>
     </form>
   </body>
 </html>

@@ -8,3 +8,6 @@ class Post(models.Model):
     create_date = models.DateTimeField()
     author = models.ForeignKey(User)
     rating = models.IntegerField(default=0)
+
+    def create_date_pretty(self):
+        return self.create_date.strftime('%b %e %Y')

@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Home </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
+<title> Homepage </title>
+{% extends 'base.html' %}
+  {% block content %}
   <h1> The homepage </h1>
 
   <a href="{% url 'posts:create' %}">Create New Post</a>
@@ -34,5 +28,6 @@
   <br />
 
   {% endfor %}
-  </body>
-</html>
+
+
+{% endblock %}

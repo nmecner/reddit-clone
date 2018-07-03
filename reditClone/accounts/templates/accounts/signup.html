@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Sing up </title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-  </head>
-  <body>
+<title> Signup </title>
+{% extends 'base.html' %}
+  {% block content %}
   <h1> Sign up!</h1>
 
   {% if error %}
@@ -31,5 +25,4 @@
         <br />
         <input type="submit" value="Sign up!"/>
     </form>
-  </body>
-</html>
+ {% endblock %}

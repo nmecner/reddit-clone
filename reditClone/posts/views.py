@@ -25,7 +25,7 @@ def create(request):
 
 
 def home(request):
-    posts = Post.objects.order_by('rating')
+    posts = Post.objects.order_by('-rating')
     return render(request, 'posts/home.html', {'posts': posts})
 
 
